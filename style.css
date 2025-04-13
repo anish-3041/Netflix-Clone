@@ -796,7 +796,7 @@ nav {
 
   .signInButton {
     margin-top: 1rem;
-    width: 110px;
+    width: auto;
   }
 
   .lowerNavbarSection {

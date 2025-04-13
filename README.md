@@ -4,7 +4,7 @@ A responsive front-end clone of Netflix built using **HTML**, **CSS**, and **Jav
 
 ## Live Demo
 
-[Click here to view it live](https://anish-3041.github.io/NetflixClone/)
+[Click here to view it live](https://anish-3041.github.io/Netflix-Clone/)
 
 ---
 

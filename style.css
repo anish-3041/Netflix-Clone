@@ -129,6 +129,7 @@ nav {
   border: 1px solid white;
   border-radius: 20px;
   width: 100%;
+  z-index: 2;
 }
 
 .languageOption {
@@ -807,16 +808,6 @@ nav {
   }
 }
 
-@media (hover: none) and (pointer: coarse) {
-  .menuList li,
-  .faqQuestion,
-  .getStartedButton {
-    min-height: 44px; /* Minimum touch target size */
-  }
-}
-
-
-
 /* Landscape-specific fixes */
 @media screen and (max-height: 500px) and (orientation: landscape) {
   /* Adjust banner section for landscape */
@@ -848,7 +839,6 @@ nav {
     flex-wrap: nowrap; /* Try to keep on one line in landscape */
   }
   
-  @media screen and (max-height: 450px) {
     nav {
       height: auto;
     }
@@ -864,5 +854,26 @@ nav {
     .bannerContainer p {
       margin-bottom: 0.3rem;
     }
+}
+
+@media screen and (min-height: 900px) {
+  nav{
+    min-height: 10vh;
+  }
+
+  .bannerContainer h2{
+    width: 65vw;
+  }
+
+  .getStartedButton{
+    font-size: 2.3rem;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .menuList li,
+  .faqQuestion,
+  .getStartedButton {
+    min-height: 50px; /* Minimum touch target size */
   }
 }

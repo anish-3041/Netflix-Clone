@@ -56,7 +56,10 @@ body {
 
 nav {
   /* border: 2px solid green; */
-  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 20vh;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -75,7 +78,8 @@ nav {
 
 .netflixLogo {
   /* border: 2px solid green; */
-  width: 25%;
+  width: clamp(100px, 100%, 150px); /* Responsive logo size */
+  height: auto;
 }
 
 .upperNavbarRightSection {
@@ -88,6 +92,7 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-top: 1rem;
   /* border: 2px solid green; */
   height: 100%;
 }
@@ -183,9 +188,12 @@ nav {
   /* border: 2px solid red; */
   height: 90vh;
   background-image: url(Assets/Images/backgroundnetflix.jpg);
+  object-fit: cover;
   background-size: 100%;
   border-radius: 20px;
   position: relative;
+  background-size: cover;
+  background-position: center;
 }
 
 .bannerOverlay {
@@ -201,10 +209,10 @@ nav {
 
 .bannerContainer {
   /* border: 2px solid red; */
-  height: 80%;
+  height: auto;
   width: 100%;
   position: absolute;
-  bottom: 0;
+  top:10rem;
   color: white;
   display: flex;
   flex-direction: column;
@@ -213,27 +221,33 @@ nav {
 }
 
 .bannerContainer h2 {
-  font-size: 4rem;
-  width: 50%;
+  font-size: clamp(2rem, 5vw, 4rem); /* Responsive text sizing */
+  width: clamp(350px, 90%, 50vw); /* Responsive width */
   text-align: center;
   /* border: 2px solid blue; */
 }
 
 .bannerContainer h4 {
-  font-size: 1.5rem;
-  margin: 20px;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem); /* Responsive text sizing */
+  width: clamp(280px, 80%, 45vw); /* Responsive width */
+  text-align: center;
+  margin: clamp(10px, 2vh, 20px) 0; /* Responsive margin */
 }
 
 .bannerContainer p {
-  font-size: 1rem;
-  margin: 20px;
+  font-size: clamp(0.9rem, 1.5vw, 1rem); /* Responsive text sizing */
+  width: clamp(300px, 85%, 45vw); /* Responsive width */
+  text-align: center;
+  margin: clamp(8px, 1.5vh, 20px) 0; /* Responsive margin */
 }
 
 .inputEmailContainer {
   /* border: 2px solid green; */
-  width: 50rem;
+  width: clamp(300px, 90%, 50rem); /* Responsive width */
   display: flex;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
   justify-content: space-around;
+  gap: 1rem;
 }
 
 .emailInputBox {
@@ -288,8 +302,9 @@ nav {
 .planSection h2,
 .reasonToJoinSection h2,
 .faqSection h2 {
-  margin-left: 5rem;
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem); /* Responsive text sizing */
+  margin-left: clamp(1rem, 5vw, 5rem); /* Responsive left margin */
+  margin-bottom: clamp(0.8rem, 2vh, 1.5rem); /* Responsive bottom margin */
 }
 
 .carouselCardContainer, 
@@ -604,24 +619,26 @@ nav {
 }
 
 @media screen and (max-width: 1150px) {
-  nav {
-    position: static;
+  .backgroundContainer{
+    height: 80vh;
   }
 
-  .netflixLogo {
-    width: 40%;
+  .bannerOverlay{
+    height: 102%;
   }
 
   .menuList {
     width: 85%;
+    height: 50%;
+    margin-top: 2rem;
   }
 
   .sectionsContainer {
     margin-top: 0;
   }
 
-  .bannerContainer {
-    top: 2rem;
+  .bannerSection{
+    height: 70vh;
   }
 
   .inputEmailContainer {
@@ -630,17 +647,20 @@ nav {
   }
 
   .emailInputBox {
-    width: 90%;
+    width: 70%;
     margin-bottom: 1rem;
   }
 
   .getStartedButton {
     width: 50%;
-    height: 6vh;
+    height: 4vh;
     font-size: 1.4rem;
   }
 
-  .carouselSection,
+  .carouselSection{
+    margin-top: 7.5rem;
+  }
+
   .planSection,
   .reasonToJoinSection,
   .faqSection,
@@ -653,7 +673,6 @@ nav {
   .plansContainer {
     /* border: 2px solid green; */
     padding-left: 5%;
-    justify-items: center;
   }
 
   .reasonsContainer {
@@ -681,35 +700,6 @@ nav {
     height: 75vh;
   }
 
-  .bannerContainer h2 {
-    font-size: 3.3rem;
-    /* border: 2px solid blue; */
-  }
-
-  .bannerContainer h4 {
-    font-size: 1.2rem;
-    margin: 1rem;
-  }
-
-  .inputEmailContainer {
-    width: 90%;
-  }
-
-  .planSection,
-  .reasonToJoinSection,
-  .faqSection {
-    margin-top: 3rem;
-  }
-
-  .carouselSection h2,
-  .planSection h2,
-  .reasonToJoinSection h2,
-  .faqSection h2 {
-    margin-left: 2rem;
-    font-size: 1.7rem;
-  }
-
-  .bannerContainer p,
   .getStartedSection p {
     font-size: 1rem;
     margin: 0.6rem;
@@ -723,9 +713,6 @@ nav {
 }
 
 @media screen and (max-width: 635px) {
-  .netflixLogo {
-    width: 93%;
-  }
 
   .NavbarButtonContainer {
     margin-right: 0;
@@ -733,11 +720,6 @@ nav {
 
   .signInButton {
     width: 5rem;
-  }
-
-  .bannerContainer h2 {
-    font-size: 2.7rem;
-    /* border: 2px solid blue; */
   }
 
   .carouselSection {
@@ -763,6 +745,10 @@ nav {
 @media screen and (max-width: 440px) {
   :root {
     font-size: 14px;
+  }
+
+  nav{
+    position: static;
   }
 
   .navContainer {
@@ -792,11 +778,11 @@ nav {
   .NavbarButtonContainer {
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
   }
 
   .signInButton {
     margin-top: 1rem;
-    width: auto;
   }
 
   .lowerNavbarSection {
@@ -807,16 +793,6 @@ nav {
     height: 60vh;
   }
 
-  .bannerContainer h2 {
-    font-size: 2rem;
-    width: 90%;
-  }
-
-  .bannerSection h4 {
-    font-size: 1.2rem;
-  }
-
-  .bannerSection p,
   .getStartedSection p {
     font-size: 0.6rem;
   }
@@ -827,13 +803,6 @@ nav {
     width: 100%;
     font-size: 1.5rem;
   }
-
-  .carouselSection h2,
-  .planSection h2,
-  .reasonToJoinSection h2,
-  .faqSection h2 {
-    font-size: 1.4rem;
-  }
 }
 
 @media (hover: none) and (pointer: coarse) {
@@ -841,5 +810,57 @@ nav {
   .faqQuestion,
   .getStartedButton {
     min-height: 44px; /* Minimum touch target size */
+  }
+}
+
+
+
+/* Landscape-specific fixes */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  /* Adjust banner section for landscape */
+  .bannerSection {
+    min-height: 110vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+  }
+  
+  .bannerContainer h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    width: 80%;
+    margin: 0 auto 0.5rem;
+  }
+
+  .bannerContainer h4 {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    margin: 0.5rem auto;
+  }
+  
+  .bannerContainer p {
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    margin: 0.5rem auto 1rem;
+  }
+
+  .inputEmailContainer {
+    width: 80%;
+    flex-direction: row;
+    flex-wrap: nowrap; /* Try to keep on one line in landscape */
+  }
+  
+  @media screen and (max-height: 450px) {
+    nav {
+      height: auto;
+    }
+    
+    
+    .inputEmailContainer {
+      flex-wrap: wrap;
+    }
+    
+    /* Reduce vertical spacing in extreme landscape */
+    .bannerContainer h2,
+    .bannerContainer h4,
+    .bannerContainer p {
+      margin-bottom: 0.3rem;
+    }
   }
 }

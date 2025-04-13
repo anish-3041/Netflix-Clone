@@ -127,7 +127,7 @@ nav {
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
   border: 1px solid white;
-  border-radius: 4px;
+  border-radius: 20px;
   width: 100%;
 }
 
@@ -631,6 +631,7 @@ nav {
     width: 85%;
     height: 50%;
     margin-top: 2rem;
+    margin-bottom: 1rem;
   }
 
   .sectionsContainer {
@@ -783,6 +784,7 @@ nav {
 
   .signInButton {
     margin-top: 1rem;
+    width: auto;
   }
 
   .lowerNavbarSection {

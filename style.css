@@ -223,7 +223,7 @@ nav {
 
 .bannerContainer h2 {
   font-size: clamp(2rem, 5vw, 4rem); /* Responsive text sizing */
-  width: clamp(350px, 90%, 50vw); /* Responsive width */
+  width: clamp(330px, 90%, 50vw); /* Responsive width */
   text-align: center;
   /* border: 2px solid blue; */
 }
@@ -805,6 +805,10 @@ nav {
     height: 3rem;
     width: 100%;
     font-size: 1.5rem;
+  }
+
+  .carouselSection{
+    margin-top: 7rem;
   }
 }
 
